@@ -16,17 +16,17 @@ function breathe() {
   circle.style.webkitTransition = `all ${time[0]}s ease-in-out`
   circle.style.transform = "scale(1)"
 
-  window.setTimeout(function() {
+  window.setTimeout(function () {
     if (time[1] > 0)
       text.textContent = words[1]
 
-    window.setTimeout(function() {
+    window.setTimeout(function () {
       text.textContent = words[2]
       circle.style.transition = `all ${time[2]}s ease-in-out`
       circle.style.webkitTransition = `all ${time[2]}s ease-in-out`
       circle.style.transform = "scale(0.25)"
 
-      window.setTimeout(function() {
+      window.setTimeout(function () {
         if (time[3] > 0)
           text.textContent = words[3]
 
@@ -64,7 +64,7 @@ function closeSidebar() {
 }
 
 function toggleSidebar() {
-  (sidebarOpen) ? closeSidebar(): openSidebar()
+  (sidebarOpen) ? closeSidebar() : openSidebar()
 }
 
 function handleKeypress(e) {
@@ -142,6 +142,6 @@ function loadSettings() {
 document.onkeypress = handleKeypress
 text.onclick = toggleText
 sidebarToggle.onclick = toggleSidebar
-mainView.ontouchmove = function(e) { e.preventDefault() } //prevent mobile scroll
+mainView.ontouchmove = function (e) { e.preventDefault() } //prevent mobile scroll
 loadSettings()
 window.setTimeout(breathe, 4000)
